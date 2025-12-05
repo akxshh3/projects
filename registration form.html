@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body {
+    background-image: url('bg.jpg'); /* your background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255,255,255,0.8);
+    position: sticky;
+    top: 0;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Main Form Container */
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* Logo above the form */
+.top-logo {
+    width: 160px;
+    margin-bottom: 15px;
+}
+
+/* Registration Box */
+.registration-box {
+    width: 380px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.registration-box h2 {
+    text-align: center;
+    color: teal;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: purple;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5e0b87;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    color: rgb(70,70,70);
+}
+</style>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Student Portal</h1>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Courses</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+
+        <!-- College Logo (small) -->
+        <img src="clglogo.png" alt="College Logo" class="top-logo">
+
+        <!-- Registration Box -->
+        <div class="registration-box">
+            <h2>Student Registration Form</h2>
+
+            <form>
+                <label>First Name:</label>
+                <input type="text" required>
+
+                <label>Last Name:</label>
+                <input type="text" required>
+
+                <label>Email:</label>
+                <input type="email" required>
+
+                <label>Password:</label>
+                <input type="password"
+                id="password"
+       required
+       pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+       title="Password must contain at least:
+8 characters, 1 uppercase, 1 lowercase, 1 number, 1 special character (@$!%*?&)"> 
+
+                <label>Re-type Password:</label>
+                <input type="password"
+                id="repassword"
+       required
+       oninput="this.setCustomValidity(this.value !== document.getElementById('password').value ? 'Passwords do not match' : '')">
+
+                <label>Contact:</label>
+                <input type="text" required>
+
+                <label>Department:</label>
+                <select>
+                    <option>CSE</option>
+                    <option>ECE</option>
+                    <option>EEE</option>
+                    <option>MECH</option>
+                </select>
+
+                <label>Gender:</label>
+                <select>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Student Portal. All rights reserved.
+    </footer>
+
+</body>
+</html>
